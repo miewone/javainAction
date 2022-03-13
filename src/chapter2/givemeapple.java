@@ -16,7 +16,14 @@ public class givemeapple {
         List<Apple> heavyApples = filterApples(inventory, new AppleHeavyWeightPredicate());
         List<Apple> greenApples = filterApples(inventory, new AppleGreenColrPredicate());
 
-
+//        List<Apple> redApples = filterApples(inventory, new ApplePredicate() {
+//            @Override
+//            public boolean test(Apple apple) {
+//                return Color.RED.equals(apple.getColor());
+//            }
+//        });
+//
+        List<Apple> result = filterApples(inventory,(Apple apple) -> Color.RED.equals(apple.getColor()));
     }
     public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p)
     {
